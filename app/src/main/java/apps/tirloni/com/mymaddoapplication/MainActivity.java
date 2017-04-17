@@ -7,11 +7,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import apps.tirloni.com.mymaddoapplication.controller.ClienteController;
 import apps.tirloni.com.mymaddoapplication.model.Cliente;
 
 public class MainActivity extends AppCompatActivity {
     Cliente objCliente;
-    clientController = new ClienteController();
+    ClienteController clienteController;
     Button btnSalvar;
     Button btnLimpar;
     EditText editNome, editCidade, editUf, editProfissao;
