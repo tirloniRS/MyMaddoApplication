@@ -11,6 +11,7 @@ import apps.tirloni.com.mymaddoapplication.model.Cliente;
 
 public class MainActivity extends AppCompatActivity {
     Cliente objCliente;
+    clientController = new ClienteController();
     Button btnSalvar;
     Button btnLimpar;
     EditText editNome, editCidade, editUf, editProfissao;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         objCliente = new Cliente();
+
 
         btnSalvar = (Button) findViewById(R.id.btnSalvar);
         btnLimpar = (Button) findViewById(R.id.btnLimpar);
