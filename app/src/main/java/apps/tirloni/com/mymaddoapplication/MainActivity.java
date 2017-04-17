@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import apps.tirloni.com.mymaddoapplication.model.Cliente;
+
 public class MainActivity extends AppCompatActivity {
     Cliente objCliente;
     Button btnSalvar;
@@ -56,21 +58,41 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Limpar();
+                limparDados();
 
-                Toast.makeText(getApplicationContext(), "Formulário Limpo!", Toast.LENGTH_LONG).show();
+                String dadosDigitados = "";
+
+                dadosDigitados += "Nome: "+objCliente.getNome()+"\n";
+                dadosDigitados += "Cidade: "+objCliente.getCidade()+"\n";
+                dadosDigitados += "Uf: "+objCliente.getUf()+"\n";
+                dadosDigitados += "Profissao: "+objCliente.getProfissao()+"\n";
+                dadosDigitados += "Empresa: "+objCliente.getEmpresa()+"\n";
+                dadosDigitados += "Telefone: "+objCliente.getTelefone()+"\n";
+                dadosDigitados += "Email: "+objCliente.getEmail()+"\n";
+
+                Toast.makeText(getApplicationContext(), dadosDigitados, Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    private void Limpar() {
-        objCliente.setNome("");
-        objCliente.setCidade("");
-        objCliente.setUf("");
-        objCliente.setProfissao("");
-        objCliente.setEmpresa("");
-        objCliente.setTelefone("");
-        objCliente.setEmail("");
+    private void limparDados() {
+        objCliente.setNome(null);
+        objCliente.setCidade(null);
+        objCliente.setUf(null);
+        objCliente.setProfissao(null);
+        objCliente.setEmpresa(null);
+        objCliente.setTelefone(null);
+        objCliente.setEmail(null);
+
+        editNome.setText("");
+        editCidade.setText("");
+        editUf.setText("");
+        editProfissao.setText("");
+        editEmpresa.setText("");
+        editTelefone.setText("");
+        editEmail.setText("");
+
+        editNome.requestFocus();
     }
 
     private void popularCliente() {

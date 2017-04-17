@@ -1,4 +1,4 @@
-package apps.tirloni.com.mymaddoapplication;
+package apps.tirloni.com.mymaddoapplication.model;
 
 /**
  * Created by alexsandro-rs on 13/04/2017.
