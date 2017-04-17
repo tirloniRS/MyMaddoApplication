@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Maddo Application</string>
+    <string name="main_txtTitulo">Cadastro de Cliente</string>
+    <string name="main_nome_completo">Nome Completo</string>
+    <string name="main_cidade">Cidade</string>
+    <string name="txtUf">UF</string>
+    <string name="txtProfissao">Profissão</string>
+    <string name="txt_nome_da_empresa">Nome da Empresa</string>
+    <string name="txt_telefone">Telefone</string>
+    <string name="txtE_mail">E-mail</string>
+    <string name="txtSalvar">Salvar</string>
+    <string name="btnLimpar">Limpar</string>
+</resources>
