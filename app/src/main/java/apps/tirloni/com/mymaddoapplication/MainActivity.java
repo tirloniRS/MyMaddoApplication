@@ -24,7 +24,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //objeto POJO
         objCliente = new Cliente();
+
+        clienteController = new ClienteController();
+
 
 
         btnSalvar = (Button) findViewById(R.id.btnSalvar);
@@ -38,22 +42,17 @@ public class MainActivity extends AppCompatActivity {
         editTelefone = (EditText) findViewById(R.id.editTelefone);
         editEmail = (EditText) findViewById(R.id.editEmail);
 
+        //Capturando o click do  botão
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                popularCliente();
+                //popular o objeto cliente c\ os dados do formulário
+                popularDados();
 
-                String dadosDigitados = "";
+                //Solicitar a controller que salve os dados do cliente
+                clienteController.salvarCliente(objCliente);
 
-                dadosDigitados += "Nome: "+objCliente.getNome()+"\n";
-                dadosDigitados += "Cidade: "+objCliente.getCidade()+"\n";
-                dadosDigitados += "Uf: "+objCliente.getUf()+"\n";
-                dadosDigitados += "Profissao: "+objCliente.getProfissao()+"\n";
-                dadosDigitados += "Empresa: "+objCliente.getEmpresa()+"\n";
-                dadosDigitados += "Telefone: "+objCliente.getTelefone()+"\n";
-                dadosDigitados += "Email: "+objCliente.getEmail()+"\n";
-
-                Toast.makeText(getApplicationContext(),dadosDigitados,Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),clienteController.toString(),Toast.LENGTH_LONG).show();
             }
         });
 
@@ -61,31 +60,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //Pedir p a controller limpar dados do obj cliente
+                clienteController.limparCliente();
+
+                //limpar dados do formulário
                 limparDados();
 
-                String dadosDigitados = "";
-
-                dadosDigitados += "Nome: "+objCliente.getNome()+"\n";
-                dadosDigitados += "Cidade: "+objCliente.getCidade()+"\n";
-                dadosDigitados += "Uf: "+objCliente.getUf()+"\n";
-                dadosDigitados += "Profissao: "+objCliente.getProfissao()+"\n";
-                dadosDigitados += "Empresa: "+objCliente.getEmpresa()+"\n";
-                dadosDigitados += "Telefone: "+objCliente.getTelefone()+"\n";
-                dadosDigitados += "Email: "+objCliente.getEmail()+"\n";
-
-                Toast.makeText(getApplicationContext(), dadosDigitados, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),"Clicou no Limpar" , Toast.LENGTH_LONG).show();
             }
         });
     }
 
     private void limparDados() {
-        objCliente.setNome(null);
-        objCliente.setCidade(null);
-        objCliente.setUf(null);
-        objCliente.setProfissao(null);
-        objCliente.setEmpresa(null);
-        objCliente.setTelefone(null);
-        objCliente.setEmail(null);
 
         editNome.setText("");
         editCidade.setText("");
@@ -98,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         editNome.requestFocus();
     }
 
-    private void popularCliente() {
+    private void popularDados() {
         objCliente.setNome(editNome.getText().toString());
         objCliente.setCidade(editCidade.getText().toString());
         objCliente.setUf(editUf.getText().toString());
