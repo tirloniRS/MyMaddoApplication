@@ -46,7 +46,7 @@
             <EditText
                 android:id="@+id/editCidade"
                 android:textSize="@dimen/main_txtCampos"
-                android:inputType="textCapSentences"
+                android:inputType="textCapWords"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -59,7 +59,7 @@
 
             <EditText
                 android:id="@+id/editUf"
-                android:inputType="text"
+                android:inputType="textCapCharacters"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

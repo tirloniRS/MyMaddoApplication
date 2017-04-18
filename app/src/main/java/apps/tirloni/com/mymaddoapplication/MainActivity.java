@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         //objeto POJO
         objCliente = new Cliente();
-
+        //objeto clienteController
         clienteController = new ClienteController();
 
 
